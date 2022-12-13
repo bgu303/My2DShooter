@@ -14,7 +14,7 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x < ScreenBounds.getScreenBounds().x - 50 || transform.position.x > ScreenBounds.getScreenBounds().x + 3 || transform.position.y < ScreenBounds.getScreenBounds().y - 17 || transform.position.y > ScreenBounds.getScreenBounds().y + 3) {
+        if (transform.position.x < ScreenBounds.getScreenBounds().x - 35 || transform.position.x > ScreenBounds.getScreenBounds().x + 3 || transform.position.y < ScreenBounds.getScreenBounds().y - 17 || transform.position.y > ScreenBounds.getScreenBounds().y + 3) {
             Destroy(gameObject);
         }
     }

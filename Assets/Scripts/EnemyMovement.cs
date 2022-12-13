@@ -15,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    
     void Update()
     {
         Vector3 direction = player.transform.position - transform.position;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
     private Rigidbody2D rb;
     private float moveLeftRight;
     private float moveUpDown;
@@ -15,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
 
     void Update()
     {

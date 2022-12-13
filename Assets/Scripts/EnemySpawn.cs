@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public GameObject player;
     public Transform[] spawnPoints;
 
     void Start()
