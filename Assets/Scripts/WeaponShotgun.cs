@@ -6,6 +6,7 @@ public class WeaponShotgun : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform[] firePoints;
+    private float lastInputTime;
 
     void Start()
     {
@@ -15,7 +16,10 @@ public class WeaponShotgun : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Shoot();
+            if (Time.time - lastInputTime > 0.7f) {
+                Shoot();
+                lastInputTime = Time.time;
+            }
         }
     }
 

@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     private Vector2 target;
     private Rigidbody2D rb;
+    public float hp = 100;
 
     void Start()
     {
@@ -17,14 +18,24 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        
+    }
+
+    void FixedUpdate() {
         Vector3 direction = player.transform.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Player")) {
+        if (other.gameObject.CompareTag("Player")) {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Bullet")) {
+            hp -= 50;
+        }
+        if (hp == 0) {
             Destroy(gameObject);
         }
     }
