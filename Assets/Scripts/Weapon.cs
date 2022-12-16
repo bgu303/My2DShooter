@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     private AudioSource aSource;
+    private float lastInputTime; 
 
     void Start()
     {
@@ -16,7 +17,10 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            Shoot();
+            if (Time.time - lastInputTime > 0.2f) {
+                Shoot();
+                lastInputTime = Time.time;
+            }
         }
     }
 

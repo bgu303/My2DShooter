@@ -15,7 +15,7 @@ public class ScreenBounds : MonoBehaviour
 
     void Update()
     {
-        screenBounds = mCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        screenBounds = mCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mCamera.transform.position.z));
     }
 
     public static Vector2 getScreenBounds() {

@@ -6,6 +6,7 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject fastEnemyPrefab;
+    public GameObject tankEnemyPrefab;
     public Transform[] spawnPoints;
 
     void Start()
@@ -18,16 +19,19 @@ public class EnemySpawn : MonoBehaviour
         while (true)
         {
             int randomSpawn = Random.Range(0, spawnPoints.Length);
-            int randomNumber = Random.Range(0, 2);
+            int randomEnemySelector = Random.Range(1, 11);
 
-            if (randomNumber == 0)
+            if (randomEnemySelector <= 5)
             {
                 Instantiate(fastEnemyPrefab, spawnPoints[randomSpawn].position, Quaternion.identity);
             }
-            else
+            else if (randomEnemySelector <= 9)
             {
 
                 Instantiate(enemyPrefab, spawnPoints[randomSpawn].position, Quaternion.identity);
+            }
+            else {
+                Instantiate(tankEnemyPrefab, spawnPoints[randomSpawn].position, Quaternion.identity);
             }
             yield return new WaitForSeconds(1.1f);
         }

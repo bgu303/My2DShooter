@@ -8,7 +8,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     private Vector2 target;
     private Rigidbody2D rb;
-    public float hp = 100;
+    public float currentHp;
+    public float maxHp;
 
     void Start()
     {
@@ -33,9 +34,9 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Bullet")) {
-            hp -= 50;
+            currentHp -= 50;
         }
-        if (hp == 0) {
+        if (currentHp <= 0) {
             Destroy(gameObject);
         }
     }

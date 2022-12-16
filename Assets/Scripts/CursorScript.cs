@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CursorScript : MonoBehaviour
 {
-
     public GameObject player;
 
     void Start()
@@ -12,7 +11,6 @@ public class CursorScript : MonoBehaviour
         // Cursor.visible = false;
     }
 
-    
     void Update()
     {
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
