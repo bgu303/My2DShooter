@@ -21,14 +21,14 @@ public class PlayerMovement : MonoBehaviour
         moveUpDown = Input.GetAxis("Vertical");
 
         Vector3 pos = Camera.main.WorldToScreenPoint(rb.transform.position);
-		Vector3 dir = Input.mousePosition - pos;
-		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Vector3 dir = Input.mousePosition - pos;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-		rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        rb.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         rb.velocity = new Vector2(speed * moveLeftRight * Time.fixedDeltaTime, rb.velocity.y);
         rb.velocity = new Vector2(rb.velocity.x, speed * moveUpDown * Time.fixedDeltaTime);
     }

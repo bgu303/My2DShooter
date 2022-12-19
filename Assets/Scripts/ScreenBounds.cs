@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScreenBounds : MonoBehaviour
 {
-    
     public static Vector2 screenBounds;
     private Camera mCamera;
 

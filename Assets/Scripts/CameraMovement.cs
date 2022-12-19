@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    
     public GameObject target;
 
     void Start()
     {
-        
+
     }
 
     void Update()

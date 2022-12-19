@@ -14,14 +14,21 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x < ScreenBounds.getScreenBounds().x - 35 || transform.position.x > ScreenBounds.getScreenBounds().x + 3 || transform.position.y < ScreenBounds.getScreenBounds().y - 17 || transform.position.y > ScreenBounds.getScreenBounds().y + 3) {
+        if (transform.position.x < ScreenBounds.getScreenBounds().x - 35 || transform.position.x > ScreenBounds.getScreenBounds().x + 3 || transform.position.y < ScreenBounds.getScreenBounds().y - 17 || transform.position.y > ScreenBounds.getScreenBounds().y + 3)
+        {
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Enemy")) {
-            Destroy(gameObject);
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        foreach (string enemyTag in EnemyList.ReturnEnemyList())
+        {
+            if (EnemyList.tags.Contains(other.gameObject.tag))
+            {
+                Destroy(gameObject);
+                break;
+            }
         }
     }
 }

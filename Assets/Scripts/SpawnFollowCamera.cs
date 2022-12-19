@@ -8,10 +8,9 @@ public class SpawnFollowCamera : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
-    
     void Update()
     {
         transform.position = target.transform.position;

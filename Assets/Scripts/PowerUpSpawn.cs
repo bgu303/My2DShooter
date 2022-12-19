@@ -13,9 +13,10 @@ public class PowerUpSpawn : MonoBehaviour
         StartCoroutine(SpawnPowerUp());
     }
 
-    
-    IEnumerator SpawnPowerUp() {
-        while (true) {
+    IEnumerator SpawnPowerUp()
+    {
+        while (true)
+        {
             posX = Random.Range(ScreenBounds.getScreenBounds().x, ScreenBounds.getScreenBounds().x - 30);
             posY = Random.Range(ScreenBounds.getScreenBounds().y, ScreenBounds.getScreenBounds().y - 13);
             Instantiate(slowPrefab, new Vector2(posX, posY), Quaternion.identity);

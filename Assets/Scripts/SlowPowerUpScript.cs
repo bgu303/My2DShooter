@@ -14,8 +14,10 @@ public class SlowPowerUpScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) {
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
             Time.timeScale = 0.5f;
             Invoke("ResetTimeScale", 5);
             gameObject.SetActive(false);
@@ -23,12 +25,14 @@ public class SlowPowerUpScript : MonoBehaviour
         }
     }
 
-    void ResetTimeScale() {
+    void ResetTimeScale()
+    {
         Time.timeScale = 1.0f;
     }
 
-    IEnumerator DeleteObjectAfterDelay() {
+    IEnumerator DeleteObjectAfterDelay()
+    {
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
-    } 
+    }
 }

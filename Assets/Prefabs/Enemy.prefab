@@ -152,6 +152,7 @@ MonoBehaviour:
   player: {fileID: 7018037932416766082, guid: 6927512a324a74e4a8ee9d8337123bec, type: 3}
   currentHp: 100
   maxHp: 100
+  healthbar: {fileID: 1843645361966119831}
 --- !u!114 &1843645361966119831
 MonoBehaviour:
   m_ObjectHideFlags: 0
