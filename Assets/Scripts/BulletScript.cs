@@ -22,13 +22,9 @@ public class BulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        foreach (string enemyTag in EnemyList.ReturnEnemyList())
+        if (EnemyList.tags.Contains(other.gameObject.tag))
         {
-            if (EnemyList.tags.Contains(other.gameObject.tag))
-            {
-                Destroy(gameObject);
-                break;
-            }
+            Destroy(gameObject);
         }
     }
 }
