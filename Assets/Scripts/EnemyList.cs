@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class EnemyList : MonoBehaviour
 {
-    public static List<string> tags = new List<string> {"Enemy", "EnemyFast", "EnemyTank"};
+    public static List<string> tags = new List<string> {"Enemy", "EnemyFast", "EnemyTank", "EnemyBoss1"};
 
 }

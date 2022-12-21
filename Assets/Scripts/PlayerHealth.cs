@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     void takeDamage(Collider2D other)
@@ -34,6 +34,10 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("EnemyTank"))
         {
+            currentHp -= 30;
+            slider.value = currentHp;
+        }
+        else if (other.gameObject.CompareTag("EnemyBoss1Bullet")) {
             currentHp -= 30;
             slider.value = currentHp;
         }

@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - EnemyFast
   - EnemyTank
+  - EnemyBoss1
+  - EnemyBoss1Bullet
   layers:
   - Default
   - TransparentFX
